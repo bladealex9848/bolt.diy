@@ -90,10 +90,12 @@ export default function LocalProvidersTab() {
         const envUrl = envKey ? (import.meta.env[envKey] as string | undefined) : undefined;
 
         // Set base URL if provided by environment
-        if (envUrl && !provider.settings.baseUrl) {
+        if (envUrl) {
+          // If we have an environment URL, make sure the provider is enabled and has the correct URL
           updateProviderSettings(key, {
             ...provider.settings,
             baseUrl: envUrl,
+            enabled: true, // Ensure the provider is enabled if we have an environment URL
           });
         }
 

@@ -13,17 +13,52 @@ export default class GroqProvider extends BaseProvider {
   };
 
   staticModels: ModelInfo[] = [
-    { name: 'llama-3.1-8b-instant', label: 'Llama 3.1 8b (Groq)', provider: 'Groq', maxTokenAllowed: 8000 },
-    { name: 'llama-3.2-11b-vision-preview', label: 'Llama 3.2 11b (Groq)', provider: 'Groq', maxTokenAllowed: 8000 },
-    { name: 'llama-3.2-90b-vision-preview', label: 'Llama 3.2 90b (Groq)', provider: 'Groq', maxTokenAllowed: 8000 },
-    { name: 'llama-3.2-3b-preview', label: 'Llama 3.2 3b (Groq)', provider: 'Groq', maxTokenAllowed: 8000 },
-    { name: 'llama-3.2-1b-preview', label: 'Llama 3.2 1b (Groq)', provider: 'Groq', maxTokenAllowed: 8000 },
-    { name: 'llama-3.3-70b-versatile', label: 'Llama 3.3 70b (Groq)', provider: 'Groq', maxTokenAllowed: 8000 },
+    { name: 'llama-3.3-70b-versatile', label: 'Llama 3.3 70B Versatile', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'llama-3.3-70b-versatile-vision', label: 'Llama 3.3 70B Versatile Vision', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'llama-3.2-90b-vision-preview', label: 'Llama 3.2 90B Vision', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'llama-3.2-11b-vision-preview', label: 'Llama 3.2 11B Vision', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'llama-3.2-3b-preview', label: 'Llama 3.2 3B', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'llama-3.2-1b-preview', label: 'Llama 3.2 1B', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'llama-3.1-8b-instant', label: 'Llama 3.1 8B Instant', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'llama-3.1-70b-instant', label: 'Llama 3.1 70B Instant', provider: 'Groq', maxTokenAllowed: 131072 },
+    { name: 'mixtral-8x7b-32768', label: 'Mixtral 8x7B-32768', provider: 'Groq', maxTokenAllowed: 32768 },
+    { name: 'gemma-7b-it', label: 'Gemma 7B-IT', provider: 'Groq', maxTokenAllowed: 8192 },
+    { name: 'gemma-2b-it', label: 'Gemma 2B-IT', provider: 'Groq', maxTokenAllowed: 8192 },
     {
       name: 'deepseek-r1-distill-llama-70b',
-      label: 'Deepseek R1 Distill Llama 70b (Groq)',
+      label: 'Deepseek R1 Distill Llama 70B',
       provider: 'Groq',
       maxTokenAllowed: 131072,
+    },
+    {
+      name: 'deepseek-coder-33b-instruct',
+      label: 'Deepseek Coder 33B Instruct',
+      provider: 'Groq',
+      maxTokenAllowed: 16384,
+    },
+    {
+      name: 'claude-3-5-sonnet-20240620',
+      label: 'Claude 3.5 Sonnet (Groq)',
+      provider: 'Groq',
+      maxTokenAllowed: 200000,
+    },
+    {
+      name: 'claude-3-opus-20240229',
+      label: 'Claude 3 Opus (Groq)',
+      provider: 'Groq',
+      maxTokenAllowed: 200000,
+    },
+    {
+      name: 'claude-3-sonnet-20240229',
+      label: 'Claude 3 Sonnet (Groq)',
+      provider: 'Groq',
+      maxTokenAllowed: 200000,
+    },
+    {
+      name: 'claude-3-haiku-20240307',
+      label: 'Claude 3 Haiku (Groq)',
+      provider: 'Groq',
+      maxTokenAllowed: 200000,
     },
   ];
 

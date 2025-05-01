@@ -21,6 +21,12 @@ export default class AmazonBedrockProvider extends BaseProvider {
 
   staticModels: ModelInfo[] = [
     {
+      name: 'anthropic.claude-3-7-sonnet-20250219-v1:0',
+      label: 'Claude 3.7 Sonnet (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 200000,
+    },
+    {
       name: 'anthropic.claude-3-5-sonnet-20241022-v2:0',
       label: 'Claude 3.5 Sonnet v2 (Bedrock)',
       provider: 'AmazonBedrock',
@@ -30,19 +36,49 @@ export default class AmazonBedrockProvider extends BaseProvider {
       name: 'anthropic.claude-3-5-sonnet-20240620-v1:0',
       label: 'Claude 3.5 Sonnet (Bedrock)',
       provider: 'AmazonBedrock',
-      maxTokenAllowed: 4096,
+      maxTokenAllowed: 200000,
+    },
+    {
+      name: 'anthropic.claude-3-opus-20240229-v1:0',
+      label: 'Claude 3 Opus (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 200000,
     },
     {
       name: 'anthropic.claude-3-sonnet-20240229-v1:0',
       label: 'Claude 3 Sonnet (Bedrock)',
       provider: 'AmazonBedrock',
-      maxTokenAllowed: 4096,
+      maxTokenAllowed: 200000,
     },
     {
       name: 'anthropic.claude-3-haiku-20240307-v1:0',
       label: 'Claude 3 Haiku (Bedrock)',
       provider: 'AmazonBedrock',
-      maxTokenAllowed: 4096,
+      maxTokenAllowed: 200000,
+    },
+    {
+      name: 'meta.llama3-70b-instruct-v1:0',
+      label: 'Llama 3 70B Instruct (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 8192,
+    },
+    {
+      name: 'meta.llama3-8b-instruct-v1:0',
+      label: 'Llama 3 8B Instruct (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 8192,
+    },
+    {
+      name: 'meta.llama3-1-8b-instruct-v1:0',
+      label: 'Llama 3.1 8B Instruct (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 8192,
+    },
+    {
+      name: 'meta.llama3-1-70b-instruct-v1:0',
+      label: 'Llama 3.1 70B Instruct (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 8192,
     },
     {
       name: 'amazon.nova-pro-v1:0',
@@ -60,7 +96,37 @@ export default class AmazonBedrockProvider extends BaseProvider {
       name: 'mistral.mistral-large-2402-v1:0',
       label: 'Mistral Large 24.02 (Bedrock)',
       provider: 'AmazonBedrock',
-      maxTokenAllowed: 8192,
+      maxTokenAllowed: 32768,
+    },
+    {
+      name: 'mistral.mistral-large-2407-v1:0',
+      label: 'Mistral Large 24.07 (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 32768,
+    },
+    {
+      name: 'mistral.mixtral-8x7b-v3:0',
+      label: 'Mixtral 8x7B v3 (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 32768,
+    },
+    {
+      name: 'cohere.command-r-v1:0',
+      label: 'Cohere Command R (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 4096,
+    },
+    {
+      name: 'cohere.command-r-plus-v1:0',
+      label: 'Cohere Command R+ (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 4096,
+    },
+    {
+      name: 'cohere.command-light-v1:0',
+      label: 'Cohere Command Light (Bedrock)',
+      provider: 'AmazonBedrock',
+      maxTokenAllowed: 4096,
     },
   ];
 

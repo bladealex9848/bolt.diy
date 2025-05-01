@@ -17,29 +17,74 @@ export default class AnthropicProvider extends BaseProvider {
       name: 'claude-3-7-sonnet-20250219',
       label: 'Claude 3.7 Sonnet',
       provider: 'Anthropic',
-      maxTokenAllowed: 8000,
+      maxTokenAllowed: 200000,
+    },
+    {
+      name: 'claude-3-5-sonnet-20241022-v2',
+      label: 'Claude 3.5 Sonnet v2',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000,
     },
     {
       name: 'claude-3-5-sonnet-latest',
-      label: 'Claude 3.5 Sonnet (new)',
+      label: 'Claude 3.5 Sonnet (latest)',
       provider: 'Anthropic',
-      maxTokenAllowed: 8000,
+      maxTokenAllowed: 200000,
     },
     {
       name: 'claude-3-5-sonnet-20240620',
-      label: 'Claude 3.5 Sonnet (old)',
+      label: 'Claude 3.5 Sonnet (2024-06-20)',
       provider: 'Anthropic',
-      maxTokenAllowed: 8000,
+      maxTokenAllowed: 200000,
     },
     {
       name: 'claude-3-5-haiku-latest',
-      label: 'Claude 3.5 Haiku (new)',
+      label: 'Claude 3.5 Haiku (latest)',
       provider: 'Anthropic',
-      maxTokenAllowed: 8000,
+      maxTokenAllowed: 200000,
     },
-    { name: 'claude-3-opus-latest', label: 'Claude 3 Opus', provider: 'Anthropic', maxTokenAllowed: 8000 },
-    { name: 'claude-3-sonnet-20240229', label: 'Claude 3 Sonnet', provider: 'Anthropic', maxTokenAllowed: 8000 },
-    { name: 'claude-3-haiku-20240307', label: 'Claude 3 Haiku', provider: 'Anthropic', maxTokenAllowed: 8000 },
+    {
+      name: 'claude-3-5-haiku-20240620',
+      label: 'Claude 3.5 Haiku (2024-06-20)',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000,
+    },
+    {
+      name: 'claude-3-opus-20240229-v1',
+      label: 'Claude 3 Opus (2024-02-29)',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000
+    },
+    {
+      name: 'claude-3-opus-latest',
+      label: 'Claude 3 Opus (latest)',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000
+    },
+    {
+      name: 'claude-3-sonnet-20240229',
+      label: 'Claude 3 Sonnet (2024-02-29)',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000
+    },
+    {
+      name: 'claude-3-sonnet-latest',
+      label: 'Claude 3 Sonnet (latest)',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000
+    },
+    {
+      name: 'claude-3-haiku-20240307',
+      label: 'Claude 3 Haiku (2024-03-07)',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000
+    },
+    {
+      name: 'claude-3-haiku-latest',
+      label: 'Claude 3 Haiku (latest)',
+      provider: 'Anthropic',
+      maxTokenAllowed: 200000
+    },
   ];
 
   async getDynamicModels(

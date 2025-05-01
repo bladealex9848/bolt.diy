@@ -340,10 +340,10 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
             {!chatStarted && (
               <div id="intro" className="mt-[16vh] max-w-chat mx-auto text-center px-4 lg:px-0">
                 <h1 className="text-3xl lg:text-6xl font-bold text-bolt-elements-textPrimary mb-4 animate-fade-in">
-                  Where ideas begin
+                  Donde las ideas comienzan
                 </h1>
                 <p className="text-md lg:text-xl mb-8 text-bolt-elements-textSecondary animate-fade-in animation-delay-200">
-                  Bring ideas to life in seconds or get help on existing projects.
+                  Da vida a tus ideas en segundos u obtén ayuda en proyectos existentes.
                 </p>
               </div>
             )}
@@ -563,7 +563,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                         minHeight: TEXTAREA_MIN_HEIGHT,
                         maxHeight: TEXTAREA_MAX_HEIGHT,
                       }}
-                      placeholder="How can Bolt help you today?"
+                      placeholder="¿Cómo puede Bolt ayudarte hoy?"
                       translate="no"
                     />
                     <ClientOnly>
@@ -587,16 +587,16 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                     </ClientOnly>
                     <div className="flex justify-between items-center text-sm p-4 pt-2">
                       <div className="flex gap-1 items-center">
-                        <IconButton title="Upload file" className="transition-all" onClick={() => handleFileUpload()}>
+                        <IconButton title="Subir archivo" className="transition-all" onClick={() => handleFileUpload()}>
                           <div className="i-ph:paperclip text-xl"></div>
                         </IconButton>
                         <IconButton
-                          title="Enhance prompt"
+                          title="Mejorar prompt"
                           disabled={input.length === 0 || enhancingPrompt}
                           className={classNames('transition-all', enhancingPrompt ? 'opacity-100' : '')}
                           onClick={() => {
                             enhancePrompt?.();
-                            toast.success('Prompt enhanced!');
+                            toast.success('¡Prompt mejorado!');
                           }}
                         >
                           {enhancingPrompt ? (
@@ -614,7 +614,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                         />
                         {chatStarted && <ClientOnly>{() => <ExportChatButton exportChat={exportChat} />}</ClientOnly>}
                         <IconButton
-                          title="Model Settings"
+                          title="Configuración del Modelo"
                           className={classNames('transition-all flex items-center gap-1', {
                             'bg-bolt-elements-item-backgroundAccent text-bolt-elements-item-contentAccent':
                               isModelSettingsCollapsed,
@@ -630,9 +630,9 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                       </div>
                       {input.length > 3 ? (
                         <div className="text-xs text-bolt-elements-textTertiary">
-                          Use <kbd className="kdb px-1.5 py-0.5 rounded bg-bolt-elements-background-depth-2">Shift</kbd>{' '}
-                          + <kbd className="kdb px-1.5 py-0.5 rounded bg-bolt-elements-background-depth-2">Return</kbd>{' '}
-                          a new line
+                          Usa <kbd className="kdb px-1.5 py-0.5 rounded bg-bolt-elements-background-depth-2">Shift</kbd>{' '}
+                          + <kbd className="kdb px-1.5 py-0.5 rounded bg-bolt-elements-background-depth-2">Enter</kbd>{' '}
+                          para nueva línea
                         </div>
                       ) : null}
                       <SupabaseConnection />
@@ -689,7 +689,7 @@ function ScrollToBottom() {
         className="absolute z-50 top-[0%] translate-y-[-100%] text-4xl rounded-lg left-[50%] translate-x-[-50%] px-1.5 py-0.5 flex items-center gap-2 bg-bolt-elements-background-depth-3 border border-bolt-elements-borderColor text-bolt-elements-textPrimary text-sm"
         onClick={() => scrollToBottom()}
       >
-        Go to last message
+        Ir al último mensaje
         <span className="i-ph:arrow-down animate-bounce" />
       </button>
     )

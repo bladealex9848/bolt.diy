@@ -153,29 +153,40 @@ ${escapeBoltTags(file.content)}
 
   return (
     <>
-      <Button
-        onClick={() => setIsDialogOpen(true)}
-        title="Clone a Git Repo"
-        variant="default"
-        size="lg"
-        className={classNames(
-          'gap-2 bg-bolt-elements-background-depth-1',
-          'text-bolt-elements-textPrimary',
-          'hover:bg-bolt-elements-background-depth-2',
-          'border border-bolt-elements-borderColor',
-          'h-10 px-4 py-2 min-w-[120px] justify-center',
-          'transition-all duration-200 ease-in-out',
-          className,
+      <div className="relative">
+        <Button
+          onClick={() => setIsDialogOpen(true)}
+          title={!ready ? "Inicializando WebContainer..." : "Clonar un Repositorio Git"}
+          variant="default"
+          size="lg"
+          className={classNames(
+            'gap-2 bg-bolt-elements-background-depth-1',
+            'text-bolt-elements-textPrimary',
+            'hover:bg-bolt-elements-background-depth-2',
+            'border border-bolt-elements-borderColor',
+            'h-10 px-4 py-2 min-w-[120px] justify-center',
+            'transition-all duration-200 ease-in-out',
+            className,
+            !ready ? 'cursor-not-allowed opacity-70' : ''
+          )}
+          disabled={!ready || loading}
+        >
+          <span className={classNames(
+            !ready ? 'i-ph:spinner-gap animate-spin' : 'i-ph:git-branch',
+            'w-4 h-4'
+          )} />
+          Clonar Repositorio Git
+        </Button>
+        {!ready && (
+          <div className="absolute -bottom-8 left-0 right-0 text-xs text-center text-bolt-elements-textTertiary">
+            Inicializando entorno...
+          </div>
         )}
-        disabled={!ready || loading}
-      >
-        <span className="i-ph:git-branch w-4 h-4" />
-        Clone a Git Repo
-      </Button>
+      </div>
 
       <RepositorySelectionDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} onSelect={handleClone} />
 
-      {loading && <LoadingOverlay message="Please wait while we clone the repository..." />}
+      {loading && <LoadingOverlay message="Por favor espera mientras clonamos el repositorio..." />}
     </>
   );
 }

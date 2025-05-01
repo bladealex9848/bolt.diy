@@ -80,11 +80,18 @@ async function llmCallAction({ context, request }: ActionFunctionArgs) {
     } catch (error: unknown) {
       console.log(error);
 
-      if (error instanceof Error && error.message?.includes('API key')) {
-        throw new Response('Invalid or missing API key', {
-          status: 401,
-          statusText: 'Unauthorized',
-        });
+      if (error instanceof Error) {
+        // Capturar errores específicos de API key
+        if (error.message?.includes('API key') ||
+            error.message?.includes('Incorrect API key') ||
+            error.message?.includes('invalid_api_key') ||
+            error.message?.includes('YOUR_API')) {
+
+          throw new Response('API key inválida o no configurada. Por favor, configura una API key válida en la configuración del proveedor o en el archivo .env', {
+            status: 401,
+            statusText: 'Unauthorized',
+          });
+        }
       }
 
       throw new Response(null, {
@@ -139,11 +146,18 @@ async function llmCallAction({ context, request }: ActionFunctionArgs) {
     } catch (error: unknown) {
       console.log(error);
 
-      if (error instanceof Error && error.message?.includes('API key')) {
-        throw new Response('Invalid or missing API key', {
-          status: 401,
-          statusText: 'Unauthorized',
-        });
+      if (error instanceof Error) {
+        // Capturar errores específicos de API key
+        if (error.message?.includes('API key') ||
+            error.message?.includes('Incorrect API key') ||
+            error.message?.includes('invalid_api_key') ||
+            error.message?.includes('YOUR_API')) {
+
+          throw new Response('API key inválida o no configurada. Por favor, configura una API key válida en la configuración del proveedor o en el archivo .env', {
+            status: 401,
+            statusText: 'Unauthorized',
+          });
+        }
       }
 
       throw new Response(null, {

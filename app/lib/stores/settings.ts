@@ -68,11 +68,16 @@ const getInitialProviderSettings = (): ProviderSetting => {
 
   // Start with default settings
   PROVIDER_LIST.forEach((provider) => {
+    // Check if this is a local provider with a configured URL in .env
+    const isLocalProvider = LOCAL_PROVIDERS.includes(provider.name);
+    const envKey = provider.config?.baseUrlKey;
+    const hasEnvUrl = envKey && typeof window !== 'undefined' && import.meta.env[envKey];
+
     initialSettings[provider.name] = {
       ...provider,
       settings: {
-        // Local providers should be disabled by default
-        enabled: !LOCAL_PROVIDERS.includes(provider.name),
+        // Enable local providers if they have a configured URL in .env
+        enabled: !isLocalProvider || (isLocalProvider && hasEnvUrl),
       },
     };
   });

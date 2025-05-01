@@ -812,7 +812,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
           <Dialog.Content className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[600px] max-h-[85vh] overflow-hidden bg-white dark:bg-[#1A1A1A] rounded-xl shadow-xl z-[51] border border-[#E5E5E5] dark:border-[#333333]">
             <div className="p-4 border-b border-[#E5E5E5] dark:border-[#333333] flex items-center justify-between">
               <Dialog.Title className="text-lg font-semibold text-bolt-elements-textPrimary dark:text-bolt-elements-textPrimary-dark">
-                Import GitHub Repository
+                Importar Repositorio GitHub
               </Dialog.Title>
               <Dialog.Close
                 onClick={handleClose}
@@ -833,7 +833,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
               <div className="flex items-center gap-2">
                 <span className="i-ph:info text-blue-500" />
                 <span className="text-sm text-bolt-elements-textSecondary dark:text-bolt-elements-textSecondary-dark">
-                  Need to access private repositories?
+                  ¿Necesitas acceder a repositorios privados?
                 </span>
               </div>
               <button
@@ -841,7 +841,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                 className="px-3 py-1.5 rounded-lg bg-purple-500 hover:bg-purple-600 text-white text-sm transition-colors flex items-center gap-1.5"
               >
                 <span className="i-ph:key" />
-                Connect GitHub Account
+                Conectar Cuenta GitHub
               </button>
             </div>
 
@@ -849,11 +849,11 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
               <div className="flex gap-2 mb-4">
                 <TabButton active={activeTab === 'my-repos'} onClick={() => setActiveTab('my-repos')}>
                   <span className="i-ph:book-bookmark" />
-                  My Repos
+                  Mis Repos
                 </TabButton>
                 <TabButton active={activeTab === 'search'} onClick={() => setActiveTab('search')}>
                   <span className="i-ph:magnifying-glass" />
-                  Search
+                  Buscar
                 </TabButton>
                 <TabButton active={activeTab === 'url'} onClick={() => setActiveTab('url')}>
                   <span className="i-ph:link" />
@@ -865,7 +865,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                 <div className="space-y-4">
                   <Input
                     type="text"
-                    placeholder="Enter GitHub repository URL"
+                    placeholder="Ingresa la URL del repositorio GitHub"
                     value={customUrl}
                     onChange={(e) => setCustomUrl(e.target.value)}
                     className="w-full"
@@ -881,7 +881,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                         : 'bg-gray-300 dark:bg-gray-700 cursor-not-allowed',
                     )}
                   >
-                    Import Repository
+                    Importar Repositorio
                   </button>
                 </div>
               ) : (
@@ -891,7 +891,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                       <div className="flex gap-2">
                         <input
                           type="text"
-                          placeholder="Search repositories..."
+                          placeholder="Buscar repositorios..."
                           value={searchQuery}
                           onChange={(e) => {
                             setSearchQuery(e.target.value);
@@ -909,7 +909,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                       <div className="grid grid-cols-2 gap-2">
                         <input
                           type="text"
-                          placeholder="Filter by language..."
+                          placeholder="Filtrar por lenguaje..."
                           value={filters.language || ''}
                           onChange={(e) => {
                             setFilters({ ...filters, language: e.target.value });
@@ -919,7 +919,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                         />
                         <input
                           type="number"
-                          placeholder="Min stars..."
+                          placeholder="Mín. estrellas..."
                           value={filters.stars || ''}
                           onChange={(e) => handleFilterChange('stars', e.target.value)}
                           className="px-3 py-1.5 text-sm rounded-lg bg-[#F5F5F5] dark:bg-[#252525] border border-[#E5E5E5] dark:border-[#333333]"
@@ -927,7 +927,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                       </div>
                       <input
                         type="number"
-                        placeholder="Min forks..."
+                        placeholder="Mín. bifurcaciones..."
                         value={filters.forks || ''}
                         onChange={(e) => handleFilterChange('forks', e.target.value)}
                         className="px-3 py-1.5 text-sm rounded-lg bg-[#F5F5F5] dark:bg-[#252525] border border-[#E5E5E5] dark:border-[#333333]"
@@ -948,7 +948,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                           <h3 className="font-medium">{selectedRepository.full_name}</h3>
                         </div>
                         <div className="space-y-2">
-                          <label className="text-sm text-bolt-elements-textSecondary">Select Branch</label>
+                          <label className="text-sm text-bolt-elements-textSecondary">Seleccionar Rama</label>
                           <select
                             value={selectedBranch}
                             onChange={(e) => setSelectedBranch(e.target.value)}
@@ -960,7 +960,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                                 value={branch.name}
                                 className="bg-bolt-elements-background-depth-2 dark:bg-bolt-elements-background-depth-3 text-bolt-elements-textPrimary dark:text-bolt-elements-textPrimary-dark"
                               >
-                                {branch.name} {branch.default ? '(default)' : ''}
+                                {branch.name} {branch.default ? '(predeterminada)' : ''}
                               </option>
                             ))}
                           </select>
@@ -968,7 +968,7 @@ export function RepositorySelectionDialog({ isOpen, onClose, onSelect }: Reposit
                             onClick={handleImport}
                             className="w-full h-10 px-4 py-2 rounded-lg bg-purple-500 text-white hover:bg-purple-600 transition-all duration-200 flex items-center gap-2 justify-center"
                           >
-                            Import Selected Branch
+                            Importar Rama Seleccionada
                           </button>
                         </div>
                       </div>
@@ -1036,7 +1036,7 @@ function RepositoryList({
     return (
       <div className="flex items-center justify-center py-8 text-bolt-elements-textSecondary">
         <span className="i-ph:spinner animate-spin mr-2" />
-        Loading repositories...
+        Cargando repositorios...
       </div>
     );
   }
@@ -1045,7 +1045,7 @@ function RepositoryList({
     return (
       <div className="flex flex-col items-center justify-center py-8 text-bolt-elements-textSecondary">
         <span className="i-ph:folder-simple-dashed w-12 h-12 mb-2 opacity-50" />
-        <p>{activeTab === 'my-repos' ? 'No repositories found' : 'Search for repositories'}</p>
+        <p>{activeTab === 'my-repos' ? 'No se encontraron repositorios' : 'Busca repositorios'}</p>
       </div>
     );
   }
@@ -1066,7 +1066,7 @@ function RepositoryCard({ repo, onSelect }: { repo: GitHubRepoInfo; onSelect: ()
           className="px-4 py-2 h-10 rounded-lg bg-purple-500 text-white hover:bg-purple-600 transition-all duration-200 flex items-center gap-2 min-w-[120px] justify-center"
         >
           <span className="i-ph:download-simple w-4 h-4" />
-          Import
+          Importar
         </button>
       </div>
       {repo.description && <p className="text-sm text-bolt-elements-textSecondary mb-3">{repo.description}</p>}
